@@ -1,6 +1,6 @@
 ---
 title: "Ecosistema Moderno de Datos y Business Intelligence"
-subtitle: "Caso aplicado — Cartera de créditos neta del sistema bancario privado (Ecuador, 2017–2026)"
+subtitle: "Módulo 1"
 author: "William Ramos- Chucuri"
 date: today
 lang: es
@@ -53,7 +53,7 @@ import("pandas")$`__version__`
 
 ![](images/clipboard-798819417.png){width="513"}
 
-## ¿Qué es Business Intelligence?
+### ¿Qué es Business Intelligence?
 
 "Es el conjunto de metodologías, tecnologías, procesos y herramientas
 que permiten transformar datos en información útil para apoyar a la toma
@@ -63,11 +63,9 @@ de decisiones."
 
 "BI convierte datos en conocimiento y conocimiento en decisiones"
 
-## ¿Por qué surge Business Intelligence?
+### ¿Por qué surge Business Intelligence?
 
 ![](images/clipboard-703559461.png){width="539"}
-
-## ¿Por qué surge Business Intelligence?
 
 ![](images/clipboard-4104617562.png){width="737"}
 
@@ -76,25 +74,25 @@ de decisiones."
 **Business Intelligence: Son procesos, prácticas y tecnologías que
 transforman datos en información útil para decidir.**
 
-## Evolución de Business Intelligence
+### Evolución de Business Intelligence
 
 ![](images/clipboard-1576259561.png){width="539"}
 
-## Rol del dato en las organizaciones
+### Rol del dato en las organizaciones
 
 ![](images/clipboard-1419052671.png){width="539"}
 
-## Analogía
+### Analogía
 
 ![](images/clipboard-540766286.png){width="539"}
 
 ![](images/clipboard-4097546782.png){width="539"}
 
-## Valor de los datos
+### Valor de los datos
 
 ![](images/clipboard-2184062281.png){width="539"}
 
-## Cultura Data Driven
+### Cultura Data Driven
 
 Una organización data-driven toma decisiones fundamentadas en datos y
 evidencia.
@@ -107,11 +105,11 @@ evidencia.
 
 ![](images/clipboard-2978377891.png){width="539"}
 
-## Características de una cultura data-driven
+### Características de una cultura data-driven
 
 ![](images/clipboard-3895054889.png){width="539"}
 
-## Barreras comunes de una cultura data-driven
+### Barreras comunes de una cultura data-driven
 
 -   Datos dispersos
 
@@ -123,17 +121,17 @@ evidencia.
 
 -   Exceso de excel
 
-## Madurez analítica
+### Madurez analítica
 
 ![](images/clipboard-1208681940.png){width="539"}
 
-## Casos de uso
+### Casos de uso
 
 ![](images/clipboard-3068899046.png){width="539"}
 
 ## 2. Unidad 2
 
-## Analítica descriptiva
+### Analítica descriptiva
 
 Proceso de usar datos históricos para responde una pregunta clave.
 
@@ -166,7 +164,7 @@ el futuro
 -   **Salud:** Revisar cuántos ingresos hubo en urgencias en los últimos
     tres días
 
-## Analítica diagnóstica
+### Analítica diagnóstica
 
 Es un tipo de análisis de datos que responde a una pregunta clave.
 
@@ -199,7 +197,7 @@ Es un tipo de análisis de datos que responde a una pregunta clave.
     falló a una hora específica al correlacionar el pico de tráfico con
     la falta de memoria RAM.
 
-## Analítica Predictiva
+### Analítica Predictiva
 
 Rama del análisis de datos que utiliza información histórica,
 estadística y técnicas de aprendizaje automático (machine learning) para
@@ -234,7 +232,7 @@ pasó, para anticiparse y saber qué es más probable que suceda.
 -   **Mantenimiento industrial:** Saber cuándo una máquina o pieza puede
     fallar para repararla antes de que se rompa.
 
-## Analítica Prescriptiva
+### Analítica Prescriptiva
 
 Fase más avanzada del análisis de datos. Responde a la pregunta:
 
@@ -280,7 +278,7 @@ El documento tiene dos pistas completas y paralelas: 🐍 **Python** y 📊
 **R**, cada una recorriendo las cuatro etapas sobre el mismo caso, para
 que compares cómo se resuelve el mismo problema en ambos lenguajes.
 
-## El caso: Cartera de créditos
+### El caso: Cartera de créditos
 
 La cuenta `14 - CARTERA DE CRÉDITOS` es una serie histórica que refleja
 datos sobre el comportamiento de créditos en el Ecuador.
@@ -291,7 +289,7 @@ Adicional tenemos dos conceptos importantes.
 -   **Ratio de cobertura** = provisiones / cartera vencida
 
 ::: callout-note
-## Estructura del archivo
+### Estructura del archivo
 
 `Balance_SB.xlsx`, hoja `Hoja1`: encabezado en la fila 6 (`CODIGO`,
 `CUENTA` y 116 columnas mensuales de fecha, de 2017-01-31 a 2026-08-31).
@@ -300,9 +298,9 @@ son subcuentas (ej. `1401`, `1499`), de 6 dígitos son el detalle más
 fino.
 :::
 
-# 🐍 Pista Python
+### 🐍 Pista Python {#sec-python-datos}
 
-## Preparación de los datos {#sec-python-datos}
+### Preparación de los datos
 
 ```{python}
 #| label: py-setup
@@ -517,7 +515,7 @@ df.tail()
     la base construida y verificar que los cálculos fueron realizados
     correctamente.
 
-## 1. Analítica descriptiva — ¿Qué pasó? {#sec-python-descriptiva}
+### 1. Analítica descriptiva — ¿Qué pasó? {#sec-python-descriptiva}
 
 ```{python}
 #| label: py-descriptiva-stats
@@ -629,7 +627,7 @@ crecimiento anual compuesta cercana al valor calculado arriba. La
 distancia entre la línea bruta y la neta (las provisiones) también crece
 en términos absolutos, lo cual conviene revisar en la etapa diagnóstica.
 
-## 2. Analítica diagnóstica — ¿Con qué se relaciona? {#sec-python-diagnostica}
+### 2. Analítica diagnóstica — ¿Con qué se relaciona? {#sec-python-diagnostica}
 
 ```{python}
 #| label: fig-py-npl
@@ -748,13 +746,13 @@ diagnostico.round(4)
 
 **Lectura diagnóstica:** la variación de la cartera neta se relaciona
 más con la variación del total de activos que con la de los fondos
-disponibles (liquidez), y se relaciona **negativamente** con el nivel
-del NPL ratio: en los meses en que la cartera crece más rápido, la
-morosidad relativa tiende a ser menor. El quiebre de marzo–mayo de 2020
-(COVID-19) es visible como un salto puntual del NPL ratio, no como un
-cambio de tendencia permanente.
+disponibles (liquidez), y se relaciona negativamente con el nivel del
+NPL ratio: en los meses en que la cartera crece más rápido, la morosidad
+relativa tiende a ser menor. El quiebre de marzo–mayo de 2020 (COVID-19)
+es visible como un salto puntual del NPL ratio, no como un cambio de
+tendencia permanente.
 
-## 3. Analítica predictiva — Machine Learning {#sec-python-predictiva}
+### 3. Analítica predictiva — Machine Learning {#sec-python-predictiva}
 
 Construimos variables de rezago (*lags*) de la cartera neta y comparamos
 dos modelos sobre los últimos 12 meses como conjunto de prueba: una
@@ -928,7 +926,7 @@ plt.show()
     observados y los estimados por cada modelo.
 
 ::: callout-important
-## Lección del modelo
+#### Lección del modelo
 
 En una serie con tendencia creciente sostenida, la **regresión lineal
 supera claramente al Random Forest** en este caso. Los árboles de
@@ -940,11 +938,11 @@ estructural de los modelos basados en árboles frente a series con
 tendencia — una idea clave para decidir qué modelo usar en un caso real.
 :::
 
-## 4. Analítica prescriptiva — ¿Qué deberíamos hacer? {#sec-python-prescriptiva}
+### 4. Analítica prescriptiva — ¿Qué deberíamos hacer? {#sec-python-prescriptiva}
 
-Definimos una **regla de negocio simple** sobre la variación mensual del
-NPL ratio, y una **simulación de escenarios de estrés** sobre la cartera
-vencida más reciente.
+Definimos una regla de negocio simple sobre la variación mensual del NPL
+ratio, y una simulación de escenarios de estrés sobre la cartera vencida
+más reciente.
 
 ```{python}
 #| label: py-regla-alerta
@@ -1268,7 +1266,7 @@ escenarios <- tibble(shock_morosidad_pct = c(0, 10, 25, 50, 100)) |>
 knitr::kable(escenarios, digits = 2)
 ```
 
-# Comparación de las dos pistas
+### Comparación de las dos pistas
 
 | Etapa | Python | R |
 |------------------------|------------------------|------------------------|
@@ -1316,3 +1314,629 @@ que usaremos en las cuatro etapas:
 3.  En la etapa predictiva, prueba `ets()` en R y compáralo contra
     `auto.arima` con `accuracy()`. ¿Cuál generaliza mejor en los últimos
     12 meses?
+
+## 3. Unidad 3-Arquitectura de Datos
+
+### Data Warehouse
+
+Un Data Warehouse (DW) es un repositorio central diseñado para integrar,
+organizar y conservar datos históricos de distintas fuentes con fines de
+análisis y toma de decisiones.
+
+-   Una base de datos operacional sirve principalmente para registrar
+    operaciones del día a día.
+
+-   Un Data Warehouse sirve principalmente para analizar lo que ha
+    ocurrido en toda la organización.
+
+**Características**
+
+-   Datos estructurados.
+
+<!-- -->
+
+-   Orientado al análisis.
+
+<!-- -->
+
+-   Información histórica.
+
+<!-- -->
+
+-   Consultas SQL.
+
+<!-- -->
+
+-   Integración de múltiples fuentes.
+
+### Arquitectura de tradicional
+
+![](images/clipboard-2417958270.png)
+
+Supongamos que tienes cuatro sistemas separados:
+
+-   Créditos: saldo, tasa, fecha, cliente.
+
+-   Depósitos: cuenta, saldo, tipo de depósito.
+
+-   Clientes: identificación, edad, ubicación.
+
+-   Reclamos: tipo, fecha, institución.
+
+Cada sistema puede funcionar perfectamente de manera independiente. El
+problema aparece cuando la gerencia pregunta:
+
+**“¿Cómo evolucionaron los depósitos y créditos durante los últimos
+cinco años, por provincia, institución y tipo de cliente?”**
+
+Consultar directamente todos los sistemas operacionales sería complejo y
+potencialmente lento. Por eso se construye un Data Warehouse, donde los
+datos se limpian, homologan e integran.
+
+### ¿Qué tiene adentro?
+
+Ó como se organizan las tablas dentro del Data Warehouse para facilitar
+el análisis.
+
+Un Data Warehouse no solo es una tabla gigante de datos. Generalmente
+contiene varias tablas relacionadas.
+
+Una forma muy común de organizar los datos es el modelo Estrella (Star
+Schema), " Debido a su sencillez y velocidad".
+
+### Modelo Estrella
+
+**Una arquitectura típica puede usar un modelo estrella:**
+
+![](images/clipboard-4160734066.png)
+
+La tabla del centro, **FACT_VENTAS**, contiene las medidas numéricas del
+negocio, por ejemplo:
+
+| fecha_id | cliente_id | producto_id | sucursal_id | cantidad | total_venta |
+|----------|------------|-------------|-------------|----------|-------------|
+| 20260918 | 101        | 25          | 3           | 2        | 120.00      |
+| 20260918 | 102        | 8           | 1           | 1        | 45.00       |
+
+Es decir, ahí están los hechos que queremos analizar: cuánto se vendió,
+cuántas unidades, qué saldo hubo, cuántas operaciones, etc.
+
+Las tablas de alrededor son las dimensiones. Sirven para responder
+preguntas como “¿por quién?”, “¿cuándo?”, “¿dónde?” y “¿qué?”.
+
+Entonces, si en Power BI quieres responder:
+
+> ¿Cuánto vendimos en 2026 por provincia y categoría de producto?
+
+el sistema usa:
+
+-   `FACT_VENTAS[total_venta]`
+
+-   `DIM_FECHA[año]`
+
+-   `DIM_CLIENTE[provincia]`
+
+-   `DIM_PRODUCTO[categoria]`
+
+Eso es lo que significa que **el Data Warehouse puede estar organizado
+como un modelo estrella**.
+
+La palabra “estrella” viene de su forma visual: una tabla de hechos en
+el centro y varias dimensiones alrededor, como los brazos de una
+estrella.
+
+***"El Data Warehouse almacena información ya organizada para análisis.
+Una estructura común es el modelo estrella, donde una tabla central
+contiene los valores que queremos medir y las tablas de alrededor
+describen esos valores".***
+
+Pero el modelo estrella no es el único modelo, exitem varios modelos.
+que conviven dentro de la misma estructura....
+
+### Modelo copo de nieve
+
+Es una variación directa del modelo estrella, pero con una diferencia
+clave: las tablas de dimensiones están normalizadas (divididas en
+subtablas) para eliminar la redundancia de datos.
+
+-   **Estructura:** La tabla de hechos está en el centro, conectada a
+    dimensiones que, a su vez, se conectan a otras dimensiones
+    secundarias (lo que le da forma de copo de nieve).
+
+-   **Ventaja:** Ahorra espacio de almacenamiento y mantiene la
+    integridad de los datos.
+
+-   **Desventaja:** Requiere más uniones (*joins*) en las consultas, lo
+    que reduce el rendimiento en comparación con la estrella.
+
+### Data Vault
+
+Es un modelo moderno diseñado específicamente para Data Warehouses
+empresariales de gran escala que reciben datos de múltiples fuentes de
+forma continua.
+
+-   **Estructura:** Se basa en tres componentes principales:
+
+    -   **Hubs:** Contienen las claves de negocio únicas (ej. ID de
+        cliente).
+
+    -   **Links:** Representan las relaciones o transacciones entre los
+        Hubs.
+
+    -   **Satellites:** Guardan el contexto y los datos que cambian en
+        el tiempo (historial).
+
+-   **Ventaja:** Es extremadamente flexible, fácil de escalar y permite
+    auditorías perfectas de los datos.
+
+### Modelo de tercera forma normal
+
+Es el modelo tradicional utilizado en los sistemas transaccionales
+(OLTP) (como las bases de datos de una tienda en línea donde compras),
+pero a veces se usa en la capa de entrada (Inmon methodology) de un
+almacén de datos.
+
+-   **Estructura:** Los datos se dividen en muchas tablas altamente
+    relacionadas para evitar cualquier duplicación.
+
+-   **Ventaja:** Excelente para insertar, actualizar y borrar datos
+    rápidamente sin errores.
+
+-   **Desventaja:** Muy lento y complejo para generar reportes
+    analíticos masivos.
+
+### Modelo Desnormalizado (Tablas Anchas/OBT)
+
+Con el auge de los almacenes de datos modernos en la nube (como
+BigQuery, Snowflake o Databricks), ha ganado mucha fuerza el concepto de
+One Big Table (OBT).
+
+-   **Estructura:** En lugar de separar hechos y dimensiones, todo se
+    junta en una sola tabla gigante con muchísimas columnas.
+
+-   **Ventaja:** Las consultas son ridículamente rápidas porque no
+    existen los *joins*.
+
+-   **Desventaja:** Se duplica muchísima información y consume más
+    almacenamiento (aunque hoy en día el almacenamiento es muy barato).
+
+### ¿Conviven varios modelos dentro del Warehouse?
+
+Los modelos conviven organizados mediante una Arquitectura de
+Capas (frecuentemente llamada Medallion Architecture o Capa de Staging →
+Core → Data Marts):
+
+1.  **Diferentes Necesidades de Audiencia:**
+
+    -   El Equipo de Ingeniería de Datos necesita un modelo escalable,
+        auditable y fácil de mantener cuando cambian los sistemas origen
+        (usando Data Vault o 3NF en el Core).
+
+    -   Los Analistas de Negocio y Usuarios finales necesitan realizar
+        consultas rápidas sin entender estructuras complejas (usando
+        Modelo Estrella o OBT en Data Marts).
+
+2.  **Costo y Rendimiento de Cómputo:**
+
+    -   Ejecutar reportes analíticos complejos directamente sobre un
+        modelo 3NF o Data Vault requiere decenas de `JOINs`, consumiendo
+        muchos recursos y ralentizando los dashboards.
+
+    -   Al transformar el Core (Data Vault/3NF) en Data Marts
+        (Estrella/OBT), se precalculan o simplifican las relaciones para
+        que los reportes respondan en milisegundos.
+
+3.  **Independencia de Negocio:**
+
+    -   Cada departamento (Finanzas, Ventas, Recursos Humanos) puede
+        tener su propio Data Mart dimensional (Modelo Estrella) adaptado
+        a su lenguaje y lógica, mientras que en el Core todos los datos
+        comparten las mismas definiciones unificadas.
+
+### **Resumen Comparativo**
+
+| **Modelo** | **Capa donde vive** | **Fortalezas** | **Casos de uso ideales** |
+|:-----------------|:-----------------|:-----------------|:-----------------|
+| **Data Vault 2.0** | Core / Plata / EDW | Resiliente a cambios, auditable, escalable en ingesta. | Integración de múltiples ERPs/CRMs en un solo lugar. |
+| **3NF (Normalizado)** | Core / EDW | Sin redundancia, estricta integridad de datos. | Creación del repositorio central normalizado. |
+| **Estrella / Snowflake** | Presentación / Oro / Data Marts | Intuitivo, optimizado para BI, JOINs sencillos. | Power BI, Tableau, análisis OLAP departmental. |
+| **OBT (One Big Table)** | Presentación / Analítica Avanzada | Sin JOINs, lectura en columnas extremadamente rápida. | Machine Learning, consultas ad-hoc masivas. |
+
+### Data Lake
+
+Un Data Lake (Lago de Datos) es un repositorio centralizado de
+almacenamiento diseñado para guardar enormes volúmenes de datos en su
+formato original o nativo (raw), sin necesidad de estructurarlos
+previamente.
+
+A diferencia de un Data Warehouse, que solo acepta datos limpios y
+estructurados, un Data Lake acepta cualquier tipo de información a
+cualquier escala.
+
+### **Características Principales**
+
+### **Tipos de Datos Soportados**
+
+-   **Estructurados:** Tablas relacionales (PostgreSQL, MySQL), archivos
+    CSV.
+
+-   **Semiestructurados:** Archivos JSON, XML, Parquet, Avro, logs de
+    servidores.
+
+-   **No estructurados:** Documentos (PDF, Word), imágenes, archivos de
+    audio, video, datos de sensores IoT.
+
+### **Filosofía: *Schema-on-Read* vs *Schema-on-Write***
+
+-   Data Warehouse (Schema-on-Write): Debes definir el modelo de datos
+    (tablas, columnas, tipos de datos) antes de guardar los datos.
+
+-   Data Lake (Schema-on-Read): Guardas los datos "tal cual vienen" y
+    solo defines la estructura o el esquema al momento de leerlos o
+    consultarlos.
+
+### **Almacenamiento de Bajo Costo**
+
+Los Data Lakes suelen construirse sobre servicios de almacenamiento de
+objetos en la nube (como AWS S3, Google Cloud Storage o Azure Data Lake
+Storage), los cuales son significativamente más económicos que el
+almacenamiento de un Data Warehouse tradicional.
+
+### **Diferencias Clave: Data Warehouse vs. Data Lake**
+
+| **Característica** | **Data Warehouse** | **Data Lake** |
+|:-----------------------|:-----------------------|:-----------------------|
+| **Tipo de datos** | Solo datos estructurados y modelados. | Estructurados, semiestructurados y no estructurados. |
+| **Enfoque de carga** | ETL (Extract, Transform, Load): Se limpian y estructuran antes de cargar. | ELT (Extract, Load, Transform): Se cargan primero y se transforman después. |
+| **Esquema** | Schema-on-Write (definido al guardar). | Schema-on-Read (definido al consultar). |
+| **Costo de almacenamiento** | Más costoso (optimizado para consultas ultrarrápidas). | Muy económico (almacenamiento de archivos masivo). |
+| **Usuarios principales** | Analistas de Negocio, usuarios de BI, ejecutivos. | Data Scientists, Data Engineers, Ingenieros de Machine Learning. |
+| **Casos de uso** | Reporting corporativo, tableros BI, métricas oficiales. | Machine Learning, analítica exploratoria, Big Data, streaming. |
+
+### **¿El Riesgo del Data Lake? (Data Swamp)**
+
+Si no se implementa una buena gobernanza de datos, un Data Lake puede
+convertirse en un Data Swamp (Pantano de Datos): un lugar donde se
+acumulan terabytes o petabytes de archivos sin documentación, sin
+control de acceso y sin saber qué datos son válidos o duplicados.
+
+**"La Evolución Moderna: El Data Lakehouse"**
+
+### Data Lakehouse
+
+Es el paradigma dominante en la arquitectura de datos moderna. Nació
+para resolver la frustración de tener que mantener dos sistemas
+separados: un Data Lake y un Data Warehouse.
+
+Almacenar volúmenes masivos de datos sin procesar (típico de un Data
+Lake) pero con la velocidad, la estructura y la fiabilidad para hacer
+consultas analíticas y de negocio (típico de un Data Warehouse).
+
+Antes de la llegada del Lakehouse, las empresas tenían que mantener dos
+sistemas separados que funcionaban en dos pasos:
+
+1.  **Data Lake:** Un gran repositorio económico donde guardaban todo
+    tipo de datos estructurados, semiestructurados (JSON, XML) y no
+    estructurados (imágenes, audio). Eran excelentes para almacenar y
+    para Científicos de Datos, pero muy difíciles y lentos de consultar
+    directamente para analistas de negocio.
+
+2.  **Data Warehouse:** Para que los analistas pudieran usar los datos,
+    estos se tenían que limpiar, estructurar y mover (proceso ETL) al
+    almacén de datos. Esto era costoso, duplicaba los datos y generaba
+    retrasos.
+
+El Lakehouse elimina esta división permitiendo hacer analítica avanzada
+y consultas de negocio directamente sobre los datos almacenados en el
+Data Lake.
+
+**Capas?**
+
+![](images/clipboard-165435955.png){width="253"}
+
+### **¿Por qué fallaba este esquema tradicional?**
+
+1.  **Duplicación de datos:** Los datos se guardaban en el Data Lake y
+    luego se copiaban mediante pipelines ETL complejos al Data
+    Warehouse.
+
+2.  **Desincronización e Inconsistencia:** Si la ingesta al Warehouse
+    fallaba, los reportes de BI mostraban datos diferentes a los modelos
+    de Machine Learning.
+
+3.  **Altos Costos:** Pagar doble almacenamiento (en el Lake y en el
+    DWH) y doble procesamiento.
+
+4.  **Falta de Gobernanza Unificada:** Manejar permisos de acceso en S3
+    por un lado y en el Data Warehouse por otro era una pesadilla de
+    seguridad.
+
+### Solución... Data Lakehouse
+
+Un Data Lakehouse elimina la necesidad de tener dos sistemas. Permite
+ejecutar consultas BI ultrarrápidas, SQL y modelos de Machine Learning
+directamente sobre los archivos almacenados en el Data Lake.
+
+![](images/clipboard-600446748.png){width="595"}
+
+### **3. Pilares Tecnológicos del Data Lakehouse**
+
+¿Cómo logra un Lakehouse el rendimiento de un Warehouse usando el
+almacenamiento económico de un Lake? Gracias a tres elementos clave:
+
+### **A. Formatos de Tabla Abiertos (Open Table Formats)**
+
+Son la "magia" del Lakehouse. Agregan una capa de metadatos sobre los
+archivos planos (usualmente Parquet) para tratar carpetas de archivos
+como si fueran tablas SQL tradicionales:
+
+-   **Delta Lake** (creado por Databricks)
+
+-   **Apache Iceberg** (creado por Netflix)
+
+-   **Apache Hudi** (creado por Uber)
+
+### **B. Transacciones ACID**
+
+Garantizan que si un pipeline está escribiendo millones de registros
+mientras un usuario de BI hace una consulta, la consulta no falle ni lea
+datos corruptos o a medias.
+
+### **C. *Time Travel* (Viaje en el tiempo)**
+
+Gracias al control de versiones en los metadatos, puedes consultar cómo
+se veía una tabla en cualquier punto del pasado (ej.
+`SELECT * FROM ventas FOR SYSTEM_TIME AS OF '2025-01-01'`). Esto es
+ideal para auditorías y para reproducir experimentos de Machine
+Learning.
+
+### **D. Separación Total de Cómputo y Almacenamiento**
+
+Pagas centavos por almacenar petabytes en AWS S3 / Cloud Storage, y solo
+pagas cómputo cuando ejecutas consultas o procesos ETL.
+
+## **¿Cómo se organizan los datos dentro de un Lakehouse? (Arquitectura Medallón)**
+
+Para evitar que el Lakehouse se vuelva un "pantano de datos", los datos
+se procesan en tres capas continuas:
+
+![](images/clipboard-2159921835.png)
+
+1.  **Capa Bronce (Raw Data):** Ingesta masiva sin alterar (JSONs, logs,
+    descargas de base de datos).
+
+2.  **Capa Plata (Silver / Cleaned):** Datos limpios, filtrados,
+    deduplicados y consolidados (a menudo estructurados en **Data
+    Vault** o relaciones 3NF).
+
+3.  **Capa Oro (Gold / Business Level):** Estructurados específicamente
+    para el consumo final usando Modelos Estrella (Star Schema) u OBT
+    (One Big Table) para alimentarse directo en Power BI, Tableau o
+    modelos predictivos.
+
+### **Principales Plataformas del Mercado**
+
+Hoy en día, casi todos los grandes proveedores han evolucionado hacia la
+arquitectura Lakehouse:
+
+-   **Databricks:** El creador del término y de *Delta Lake*.
+
+-   **Snowflake:** Integración nativa con tablas *Apache Iceberg* en
+    almacenamiento propio o del cliente.
+
+-   **Google Cloud (BigQuery + BigLake):** Permite usar el motor de
+    BigQuery directamente sobre archivos Iceberg/Parquet en Google Cloud
+    Storage.
+
+-   **AWS:** Integración de *Amazon Athena/Redshift* con *Apache
+    Iceberg* y *AWS Glue*.
+
+### **Resumen Final de la Evolución**
+
+-   **Data Warehouse:** Estructurado, rígido, rápido para SQL, costoso.
+
+-   **Data Lake:** Flexible, barato, soporta cualquier dato, pero lento
+    y complejo para BI.
+
+-   **Data Lakehouse:** Lo mejor de ambos mundos (flexible, económico,
+    con rendimiento BI y transacciones ACID).
+
+| **Característica** | **Data Warehouse 🏢** | **Data Lake 🌊** | **Data Lakehouse 🏠** |
+|:-----------------|:-----------------|:-----------------|:-----------------|
+| **Analogía** | Menú de restaurante fino. | Bodega/Mercado gigante. | Buffet con cocina abierta. |
+| **Tipo de datos** | Solo estructurados (tablas). | Todo (estructurados, fotos, JSONs). | Todo (estructurados, fotos, JSONs). |
+| **Costo** | Alto. | Muy bajo. | Bajo (almacenamiento) + Escalable (cómputo). |
+| **Usuarios** | Analistas de BI / Power BI. | Científicos de Datos / ML. | **Todos** (BI, ML, SQL, Streaming). |
+| **Velocidad BI** | Ultrarrápida. | Lenta / Compleja. | Ultrarrápida. |
+
+#### Ejemplo aplicado en BigQuery
+
+![](images/clipboard-1691771055.png)
+
+<https://cloud.google.com/bigquery>
+
+Se nos abre el entorno de Big Query
+
+![](images/clipboard-1101130872.png)
+
+**¿Qué es BigQuery?**
+
+Es un almacén de datos (Data Warehouse) en la nube de Google. A
+diferencia de Excel, que se traba con un millón de filas, o de RStudio,
+que depende de la memoria RAM de sus computadoras, BigQuery puede
+analizar Petabytes de datos (miles de millones de filas) en segundos.
+Esto pasa porque utiliza la infraestructura masiva de Google: tú no
+compras servidores, solo subes tus datos y Google pone miles de
+computadoras en la nube a trabajar para ti.
+
+#### Consulta SQL
+
+Copiamos y ejecutamos
+
+``` sql
+CREATE SCHEMA IF NOT EXISTS `dataset_ecuador`;
+```
+
+¿Por qué hicimos esto y qué significa? En el mundo de la nube, no
+podemos dejar los datos flotando en el aire.
+
+Un Dataset (o Conjunto de datos) es el equivalente a una carpeta del
+sistema o una base de datos lógica. Es un contenedor. Le pusimos
+`dataset_ecuador` porque ahí dentro guardaremos todas las tablas de
+nuestro proyecto macroeconómico: las sucias, las limpias y los reportes
+finales. El comando `IF NOT EXISTS` es una buena práctica de ingeniería;
+le dice a BigQuery: 'Si la carpeta ya existe, no hagas nada; si no
+existe, créala'.
+
+![](images/clipboard-1740845566.png)
+
+#### Creamos la ingesta de datos (Bronce)
+
+> **¿Por qué se llama Bronce?** Porque aquí los datos están en su estado
+> más puro y rústico. Entraron directo del proveedor. Tienen filas
+> duplicadas, columnas con textos rotos como las fechas, y celdas vacías
+> (`NULL`). En una empresa real, nunca debes permitir que los analistas
+> de negocio o los gerentes consuman datos de la Capa Bronce, porque
+> tomarían decisiones equivocadas basados en datos sucios."\*
+
+Posterior cargamos los datos a la capa bronce...
+
+![](images/clipboard-3440358831.png)
+
+#### Creamos la capa plata (Transformación y limpieza SQL)
+
+``` sql
+CREATE OR REPLACE TABLE `dataset_ecuador_v1.Plata_coyuntura_limpia` AS
+WITH datos_normalizados AS (
+  SELECT
+    -- Estandarizamos los formatos de fecha usando el nombre exacto Column1_period
+    CASE 
+      WHEN LENGTH(TRIM(Column1_period)) = 7 THEN PARSE_DATE('%Y-%m', TRIM(Column1_period))
+      WHEN TRIM(Column1_period) LIKE '%/%' THEN PARSE_DATE('%d/%m/%Y', TRIM(Column1_period))
+      WHEN LENGTH(TRIM(Column1_period)) = 10 THEN PARSE_DATE('%Y-%m-%d', TRIM(Column1_period))
+      ELSE NULL
+    END AS fecha_mes,
+    
+    -- Casteo de Strings a flotantes reemplazando 'NA' por NULL
+    SAFE_CAST(NULLIF(TRIM(CAST(Column1_ideac_index AS STRING)), 'NA') AS FLOAT64) AS ideac_index,
+    SAFE_CAST(NULLIF(TRIM(CAST(Column1_unemployment_rate AS STRING)), 'NA') AS FLOAT64) AS tasa_desempleo,
+    SAFE_CAST(NULLIF(TRIM(CAST(Column1_underemployment_rate AS STRING)), 'NA') AS FLOAT64) AS tasa_subempleo
+  FROM `dataset_ecuador_v1.Bronce_coyuntura`
+)
+SELECT 
+  DATE_TRUNC(fecha_mes, MONTH) AS periodo_mensual,
+  ROUND(AVG(ideac_index), 2) AS ideac_promedio,
+  ROUND(AVG(tasa_desempleo), 2) AS desempleo_promedio_pct,
+  ROUND(AVG(tasa_subempleo), 2) AS subempleo_promedio_pct
+FROM datos_normalizados
+WHERE fecha_mes IS NOT NULL
+GROUP BY 1
+ORDER BY periodo_mensual;
+```
+
+#### **1️⃣ Resolver Encabezados Sucios (`Column1_period`)**
+
+> "Al importar el archivo crudo, los encabezados venían con puntos
+> (`Column1.period`). BigQuery automáticamente reemplazó los caracteres
+> inválidos con guiones bajos. En la Capa Plata renombraremos estas
+> columnas con nombres amigables de negocio como `periodo_mensual`."
+
+#### **2️⃣ Manejo de Nulos Encubiertos (`NULLIF(..., 'NA')`)**
+
+> "Muchas fuentes externas (como APIs o Excel) envían el texto `'NA'`
+> cuando falta un dato. Si intentas promediar o sumar el texto `'NA'`,
+> la base de datos se cae o da error. Con `NULLIF(campo, 'NA')`
+> convertimos ese texto engañoso en un **`NULL` real de base de datos**,
+> permitiendo que funciones como `AVG()` calculen promedios correctos
+> ignorando la falta de dato sin romper la consulta."
+
+#### **3️⃣ Normalización de Múltiples Formatos de Fecha (`CASE` + `PARSE_DATE`)**
+
+> "El archivo crudo tenía un desorden de fechas: unas filas venían como
+> `2037-11` (Año-Mes), otras como `14/01/2016` (Día/Mes/Año) y otras
+> como `2021-01-01`. Con nuestra condición `CASE`, identificamos la
+> longitud y el formato del texto para transformar **todas las variantes
+> en un objeto `DATE` estándar**."
+
+#### **4️⃣ Agregación y Granularidad Mensual (`DATE_TRUNC` + `GROUP BY`)**
+
+> "Como el archivo crudo tenía varios registros sueltos dentro del mismo
+> mes, usamos `DATE_TRUNC(fecha_mes, MONTH)` para agrupar las filas por
+> mes completo y calculamos el promedio mensual (`AVG`) del IDEAC,
+> Desempleo y Subempleo."
+
+``` sql
+CREATE OR REPLACE TABLE `dataset_ecuador_v1.Plata_sector_externo_limpio` AS
+WITH datos_normalizados AS (
+  SELECT
+    CASE 
+      WHEN LENGTH(TRIM(fecha)) = 7 THEN PARSE_DATE('%Y-%m', TRIM(fecha))
+      WHEN TRIM(fecha) LIKE '%/%' THEN PARSE_DATE('%d/%m/%Y', TRIM(fecha))
+      WHEN LENGTH(TRIM(fecha)) = 10 THEN PARSE_DATE('%Y-%m-%d', TRIM(fecha))
+      ELSE NULL
+    END AS fecha_mes,
+    
+    SAFE_CAST(NULLIF(TRIM(CAST(exportaciones_petroleras_musd_fob AS STRING)), 'NA') AS FLOAT64) AS exp_petroleras,
+    SAFE_CAST(NULLIF(TRIM(CAST(exportaciones_no_petroleras_musd_fob AS STRING)), 'NA') AS FLOAT64) AS exp_no_petroleras,
+    SAFE_CAST(NULLIF(TRIM(CAST(importaciones_musd_fob AS STRING)), 'NA') AS FLOAT64) AS importaciones,
+    SAFE_CAST(NULLIF(TRIM(CAST(remesas_musd AS STRING)), 'NA') AS FLOAT64) AS remesas
+  FROM `dataset_ecuador_v1.Bronce_sector_externo`
+)
+SELECT 
+  DATE_TRUNC(fecha_mes, MONTH) AS periodo_mensual,
+  ROUND(AVG(exp_petroleras), 2) AS exp_petroleras_musd,
+  ROUND(AVG(exp_no_petroleras), 2) AS exp_no_petroleras_musd,
+  ROUND(AVG(importaciones), 2) AS importaciones_musd,
+  ROUND(AVG(remesas), 2) AS remesas_musd
+FROM datos_normalizados
+WHERE fecha_mes IS NOT NULL
+GROUP BY 1
+ORDER BY periodo_mensual;
+```
+
+#### Creamos la capa plata (Transformación y limpieza SQL)
+
+``` sql
+CREATE OR REPLACE TABLE `dataset_ecuador_v1.Oro_master_macroeconomico` AS
+SELECT 
+  c.periodo_mensual,
+  c.ideac_promedio AS indice_actividad_economica,
+  c.desempleo_promedio_pct AS tasa_desempleo_pct,
+  c.subempleo_promedio_pct AS tasa_subempleo_pct,
+  e.exp_petroleras_musd,
+  e.exp_no_petroleras_musd,
+  -- KPI 1: Exportaciones Totales
+  ROUND(e.exp_petroleras_musd + e.exp_no_petroleras_musd, 2) AS exportaciones_totales_musd,
+  e.importaciones_musd,
+  -- KPI 2: Balanza Comercial (Exportaciones Totales - Importaciones)
+  ROUND((e.exp_petroleras_musd + e.exp_no_petroleras_musd) - e.importaciones_musd, 2) AS balanza_comercial_musd,
+  e.remesas_musd,
+  -- KPI 3: Flujo Neto de Divisas (Balanza Comercial + Remesas)
+  ROUND(((e.exp_petroleras_musd + e.exp_no_petroleras_musd) - e.importaciones_musd) + e.remesas_musd, 2) AS flujo_neto_divisas_musd
+FROM `dataset_ecuador_v1.Plata_coyuntura_limpia` c
+JOIN `dataset_ecuador_v1.Plata_sector_externo_limpio` e 
+  ON c.periodo_mensual = e.periodo_mensual
+ORDER BY c.periodo_mensual;
+```
+
+1.  Hicimos un `JOIN` por `periodo_mensual`, uniendo por primera vez los
+    datos del sector financiero/laboral con los datos del comercio
+    exterior.
+
+2.  Precalculamos los KPIs ejecutivos (Exportaciones Totales, Balanza
+    Comercial y Flujo Neto de Divisas).
+
+3.  Esta tabla está lista para conectarse directamente a cualquier
+    herramienta de BI sin requerir ningún cálculo adicional."
+
+**La idea principal es conectarlo a una herramienta de trabajo de
+visualización en nuestro caso Power BI..**
+
+#### **Resumen Ejecutivo de la Clase**
+
+| **Etapa / Capa** | **Concepto Enseñado** | **Lo que hicieron en la práctica** |
+|:---|:---|:---|
+| **Data Lake** 🌊 | **Capa Bronce (Raw)** | Guardaron fuentes heterogéneas (CSVs) con fechas mixtas (`2016-01`, `08/01/2016`), textos `'NA'` y espacios, sin alterar la fuente original. |
+| **Data Lakehouse** 🏠 | **Capa Plata (Clean)** | Usaron SQL en BigQuery para limpiar datos: `TRIM()` para espacios, `NULLIF('NA')` para nulos reales, `CASE + PARSE_DATE` para estandarizar fechas y `DATE_TRUNC + GROUP BY` para agrupar por mes. |
+| **Data Warehouse** 🏢 | **Capa Oro (Master)** | Unieron las fuentes mediante un `JOIN` por mes y precalcularon los KPIs estratégicos (Balanza Comercial, Exportaciones Totales y Flujo Neto de Divisas). |
+| **Self-Service BI** 📊 | **Power BI / Looker Studio** | Se conectaron directamente a la Capa Oro en 3 clics, creando gráficos instantáneos sin recargar la PC local ni limpiar nada en Power Query. |
