@@ -3125,7 +3125,7 @@ Figura 2: Ratio de morosidad (NPL) mensual, con el inicio de la pandemia señal
 <span id="cb28-17"><a href="#cb28-17" aria-hidden="true" tabindex="-1"></a>fig.colorbar(im, shrink<span class="op">=</span><span class="fl">0.8</span>, label<span class="op">=</span><span class="st">&quot;correlación&quot;</span>)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 <div class="cell-output cell-output-stdout">
-<pre><code>&lt;matplotlib.colorbar.Colorbar object at 0x0000028464355400&gt;</code></pre>
+<pre><code>&lt;matplotlib.colorbar.Colorbar object at 0x0000015395A55400&gt;</code></pre>
 </div>
 <details open class="code-fold">
 <summary>Ver código</summary>
@@ -5289,7 +5289,7 @@ Figura 8: Pronóstico ARIMA — próximos 6 meses (con toda la historia)
 <span id="cb57-268"><a href="#cb57-268" aria-hidden="true" tabindex="-1"></a>respondemos las cuatro preguntas de la analítica de datos:</span>
 <span id="cb57-269"><a href="#cb57-269" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb57-270"><a href="#cb57-270" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Etapa <span class="pp">|</span> Pregunta <span class="pp">|</span> Técnica en esta unidad <span class="pp">|</span></span>
-<span id="cb57-271"><a href="#cb57-271" aria-hidden="true" tabindex="-1"></a><span class="pp">|------------------------|------------------------|------------------------|</span></span>
+<span id="cb57-271"><a href="#cb57-271" aria-hidden="true" tabindex="-1"></a><span class="pp">|----|----|----|</span></span>
 <span id="cb57-272"><a href="#cb57-272" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> **Descriptiva** <span class="pp">|</span> ¿Qué pasó? <span class="pp">|</span> Tendencia, niveles, variaciones <span class="pp">|</span></span>
 <span id="cb57-273"><a href="#cb57-273" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> **Diagnóstica** <span class="pp">|</span> ¿Por qué pasó y con qué se relaciona? <span class="pp">|</span> Correlación, segmentación, indicadores de riesgo <span class="pp">|</span></span>
 <span id="cb57-274"><a href="#cb57-274" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> **Predictiva** <span class="pp">|</span> ¿Qué podría pasar? <span class="pp">|</span> Machine Learning (Python) / Series de tiempo (R) <span class="pp">|</span></span>
@@ -6290,7 +6290,7 @@ Figura 8: Pronóstico ARIMA — próximos 6 meses (con toda la historia)
 <span id="cb57-1315"><a href="#cb57-1315" aria-hidden="true" tabindex="-1"></a><span class="fu">### Comparación de las dos pistas</span></span>
 <span id="cb57-1316"><a href="#cb57-1316" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb57-1317"><a href="#cb57-1317" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Etapa <span class="pp">|</span> Python <span class="pp">|</span> R <span class="pp">|</span></span>
-<span id="cb57-1318"><a href="#cb57-1318" aria-hidden="true" tabindex="-1"></a><span class="pp">|------------------------|------------------------|------------------------|</span></span>
+<span id="cb57-1318"><a href="#cb57-1318" aria-hidden="true" tabindex="-1"></a><span class="pp">|----|----|----|</span></span>
 <span id="cb57-1319"><a href="#cb57-1319" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Descriptiva <span class="pp">|</span> <span class="in">`pandas`</span> + <span class="in">`matplotlib`</span> <span class="pp">|</span> <span class="in">`dplyr`</span> + <span class="in">`ggplot2`</span> <span class="pp">|</span></span>
 <span id="cb57-1320"><a href="#cb57-1320" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Diagnóstica <span class="pp">|</span> correlación con <span class="in">`numpy`</span>/<span class="in">`pandas`</span>, heatmap manual <span class="pp">|</span> <span class="in">`cor()`</span>, <span class="in">`corrplot`</span> <span class="pp">|</span></span>
 <span id="cb57-1321"><a href="#cb57-1321" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Predictiva <span class="pp">|</span> Machine Learning: regresión lineal vs. Random Forest (<span class="in">`scikit-learn`</span>) <span class="pp">|</span> Serie de tiempo: <span class="in">`auto.arima`</span> (<span class="in">`forecast`</span>) <span class="pp">|</span></span>
@@ -6557,7 +6557,7 @@ Figura 8: Pronóstico ARIMA — próximos 6 meses (con toda la historia)
 <span id="cb57-1582"><a href="#cb57-1582" aria-hidden="true" tabindex="-1"></a><span class="fu">### **Resumen Comparativo**</span></span>
 <span id="cb57-1583"><a href="#cb57-1583" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb57-1584"><a href="#cb57-1584" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> **Modelo** | **Capa donde vive** | **Fortalezas** | **Casos de uso ideales** <span class="pp">|</span></span>
-<span id="cb57-1585"><a href="#cb57-1585" aria-hidden="true" tabindex="-1"></a><span class="pp">|:-----------------|:-----------------|:-----------------|:-----------------|</span></span>
+<span id="cb57-1585"><a href="#cb57-1585" aria-hidden="true" tabindex="-1"></a><span class="pp">|:---|:---|:---|:---|</span></span>
 <span id="cb57-1586"><a href="#cb57-1586" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> **Data Vault 2.0** <span class="pp">|</span> Core / Plata / EDW <span class="pp">|</span> Resiliente a cambios, auditable, escalable en ingesta. <span class="pp">|</span> Integración de múltiples ERPs/CRMs en un solo lugar. <span class="pp">|</span></span>
 <span id="cb57-1587"><a href="#cb57-1587" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> **3NF (Normalizado)** <span class="pp">|</span> Core / EDW <span class="pp">|</span> Sin redundancia, estricta integridad de datos. <span class="pp">|</span> Creación del repositorio central normalizado. <span class="pp">|</span></span>
 <span id="cb57-1588"><a href="#cb57-1588" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> **Estrella / Snowflake** <span class="pp">|</span> Presentación / Oro / Data Marts <span class="pp">|</span> Intuitivo, optimizado para BI, JOINs sencillos. <span class="pp">|</span> Power BI, Tableau, análisis OLAP departmental. <span class="pp">|</span></span>
@@ -6606,7 +6606,7 @@ Figura 8: Pronóstico ARIMA — próximos 6 meses (con toda la historia)
 <span id="cb57-1631"><a href="#cb57-1631" aria-hidden="true" tabindex="-1"></a><span class="fu">### **Diferencias Clave: Data Warehouse vs. Data Lake**</span></span>
 <span id="cb57-1632"><a href="#cb57-1632" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb57-1633"><a href="#cb57-1633" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> **Característica** | **Data Warehouse** | **Data Lake** <span class="pp">|</span></span>
-<span id="cb57-1634"><a href="#cb57-1634" aria-hidden="true" tabindex="-1"></a><span class="pp">|:-----------------------|:-----------------------|:-----------------------|</span></span>
+<span id="cb57-1634"><a href="#cb57-1634" aria-hidden="true" tabindex="-1"></a><span class="pp">|:---|:---|:---|</span></span>
 <span id="cb57-1635"><a href="#cb57-1635" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> **Tipo de datos** <span class="pp">|</span> Solo datos estructurados y modelados. <span class="pp">|</span> Estructurados, semiestructurados y no estructurados. <span class="pp">|</span></span>
 <span id="cb57-1636"><a href="#cb57-1636" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> **Enfoque de carga** <span class="pp">|</span> ETL (Extract, Transform, Load): Se limpian y estructuran antes de cargar. <span class="pp">|</span> ELT (Extract, Load, Transform): Se cargan primero y se transforman después. <span class="pp">|</span></span>
 <span id="cb57-1637"><a href="#cb57-1637" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> **Esquema** <span class="pp">|</span> Schema-on-Write (definido al guardar). <span class="pp">|</span> Schema-on-Read (definido al consultar). <span class="pp">|</span></span>
@@ -6763,7 +6763,7 @@ Figura 8: Pronóstico ARIMA — próximos 6 meses (con toda la historia)
 <span id="cb57-1788"><a href="#cb57-1788" aria-hidden="true" tabindex="-1"></a>    con rendimiento BI y transacciones ACID).</span>
 <span id="cb57-1789"><a href="#cb57-1789" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb57-1790"><a href="#cb57-1790" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> **Característica** | **Data Warehouse 🏢** | **Data Lake 🌊** | **Data Lakehouse 🏠** <span class="pp">|</span></span>
-<span id="cb57-1791"><a href="#cb57-1791" aria-hidden="true" tabindex="-1"></a><span class="pp">|:-----------------|:-----------------|:-----------------|:-----------------|</span></span>
+<span id="cb57-1791"><a href="#cb57-1791" aria-hidden="true" tabindex="-1"></a><span class="pp">|:---|:---|:---|:---|</span></span>
 <span id="cb57-1792"><a href="#cb57-1792" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> **Analogía** <span class="pp">|</span> Menú de restaurante fino. <span class="pp">|</span> Bodega/Mercado gigante. <span class="pp">|</span> Buffet con cocina abierta. <span class="pp">|</span></span>
 <span id="cb57-1793"><a href="#cb57-1793" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> **Tipo de datos** <span class="pp">|</span> Solo estructurados (tablas). <span class="pp">|</span> Todo (estructurados, fotos, JSONs). <span class="pp">|</span> Todo (estructurados, fotos, JSONs). <span class="pp">|</span></span>
 <span id="cb57-1794"><a href="#cb57-1794" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> **Costo** <span class="pp">|</span> Alto. <span class="pp">|</span> Muy bajo. <span class="pp">|</span> Bajo (almacenamiento) + Escalable (cómputo). <span class="pp">|</span></span>

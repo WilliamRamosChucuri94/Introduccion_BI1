@@ -268,7 +268,7 @@ del sistema bancario privado ecuatoriano, enero 2017 – agosto 2026),
 respondemos las cuatro preguntas de la analítica de datos:
 
 | Etapa | Pregunta | Técnica en esta unidad |
-|------------------------|------------------------|------------------------|
+|----|----|----|
 | **Descriptiva** | ¿Qué pasó? | Tendencia, niveles, variaciones |
 | **Diagnóstica** | ¿Por qué pasó y con qué se relaciona? | Correlación, segmentación, indicadores de riesgo |
 | **Predictiva** | ¿Qué podría pasar? | Machine Learning (Python) / Series de tiempo (R) |
@@ -1269,7 +1269,7 @@ knitr::kable(escenarios, digits = 2)
 ### Comparación de las dos pistas
 
 | Etapa | Python | R |
-|------------------------|------------------------|------------------------|
+|----|----|----|
 | Descriptiva | `pandas` + `matplotlib` | `dplyr` + `ggplot2` |
 | Diagnóstica | correlación con `numpy`/`pandas`, heatmap manual | `cor()`, `corrplot` |
 | Predictiva | Machine Learning: regresión lineal vs. Random Forest (`scikit-learn`) | Serie de tiempo: `auto.arima` (`forecast`) |
@@ -1536,7 +1536,7 @@ Core → Data Marts):
 ### **Resumen Comparativo**
 
 | **Modelo** | **Capa donde vive** | **Fortalezas** | **Casos de uso ideales** |
-|:-----------------|:-----------------|:-----------------|:-----------------|
+|:---|:---|:---|:---|
 | **Data Vault 2.0** | Core / Plata / EDW | Resiliente a cambios, auditable, escalable en ingesta. | Integración de múltiples ERPs/CRMs en un solo lugar. |
 | **3NF (Normalizado)** | Core / EDW | Sin redundancia, estricta integridad de datos. | Creación del repositorio central normalizado. |
 | **Estrella / Snowflake** | Presentación / Oro / Data Marts | Intuitivo, optimizado para BI, JOINs sencillos. | Power BI, Tableau, análisis OLAP departmental. |
@@ -1585,7 +1585,7 @@ almacenamiento de un Data Warehouse tradicional.
 ### **Diferencias Clave: Data Warehouse vs. Data Lake**
 
 | **Característica** | **Data Warehouse** | **Data Lake** |
-|:-----------------------|:-----------------------|:-----------------------|
+|:---|:---|:---|
 | **Tipo de datos** | Solo datos estructurados y modelados. | Estructurados, semiestructurados y no estructurados. |
 | **Enfoque de carga** | ETL (Extract, Transform, Load): Se limpian y estructuran antes de cargar. | ELT (Extract, Load, Transform): Se cargan primero y se transforman después. |
 | **Esquema** | Schema-on-Write (definido al guardar). | Schema-on-Read (definido al consultar). |
@@ -1742,7 +1742,7 @@ arquitectura Lakehouse:
     con rendimiento BI y transacciones ACID).
 
 | **Característica** | **Data Warehouse 🏢** | **Data Lake 🌊** | **Data Lakehouse 🏠** |
-|:-----------------|:-----------------|:-----------------|:-----------------|
+|:---|:---|:---|:---|
 | **Analogía** | Menú de restaurante fino. | Bodega/Mercado gigante. | Buffet con cocina abierta. |
 | **Tipo de datos** | Solo estructurados (tablas). | Todo (estructurados, fotos, JSONs). | Todo (estructurados, fotos, JSONs). |
 | **Costo** | Alto. | Muy bajo. | Bajo (almacenamiento) + Escalable (cómputo). |
