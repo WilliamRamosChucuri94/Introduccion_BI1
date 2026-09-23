@@ -57,7 +57,7 @@ import("pandas")$`__version__`
 
 "Es el conjunto de metodologías, tecnologías, procesos y herramientas
 que permiten transformar datos en información útil para apoyar a la toma
-de decisiones."
+de decisiones.
 
 **¿Qué más puede sere Business Intelligence?**
 
@@ -268,7 +268,7 @@ del sistema bancario privado ecuatoriano, enero 2017 – agosto 2026),
 respondemos las cuatro preguntas de la analítica de datos:
 
 | Etapa | Pregunta | Técnica en esta unidad |
-|----|----|----|
+|------------------------|------------------------|------------------------|
 | **Descriptiva** | ¿Qué pasó? | Tendencia, niveles, variaciones |
 | **Diagnóstica** | ¿Por qué pasó y con qué se relaciona? | Correlación, segmentación, indicadores de riesgo |
 | **Predictiva** | ¿Qué podría pasar? | Machine Learning (Python) / Series de tiempo (R) |
@@ -1269,7 +1269,7 @@ knitr::kable(escenarios, digits = 2)
 ### Comparación de las dos pistas
 
 | Etapa | Python | R |
-|----|----|----|
+|------------------------|------------------------|------------------------|
 | Descriptiva | `pandas` + `matplotlib` | `dplyr` + `ggplot2` |
 | Diagnóstica | correlación con `numpy`/`pandas`, heatmap manual | `cor()`, `corrplot` |
 | Predictiva | Machine Learning: regresión lineal vs. Random Forest (`scikit-learn`) | Serie de tiempo: `auto.arima` (`forecast`) |
@@ -1536,7 +1536,7 @@ Core → Data Marts):
 ### **Resumen Comparativo**
 
 | **Modelo** | **Capa donde vive** | **Fortalezas** | **Casos de uso ideales** |
-|:---|:---|:---|:---|
+|:-----------------|:-----------------|:-----------------|:-----------------|
 | **Data Vault 2.0** | Core / Plata / EDW | Resiliente a cambios, auditable, escalable en ingesta. | Integración de múltiples ERPs/CRMs en un solo lugar. |
 | **3NF (Normalizado)** | Core / EDW | Sin redundancia, estricta integridad de datos. | Creación del repositorio central normalizado. |
 | **Estrella / Snowflake** | Presentación / Oro / Data Marts | Intuitivo, optimizado para BI, JOINs sencillos. | Power BI, Tableau, análisis OLAP departmental. |
@@ -1585,7 +1585,7 @@ almacenamiento de un Data Warehouse tradicional.
 ### **Diferencias Clave: Data Warehouse vs. Data Lake**
 
 | **Característica** | **Data Warehouse** | **Data Lake** |
-|:---|:---|:---|
+|:-----------------------|:-----------------------|:-----------------------|
 | **Tipo de datos** | Solo datos estructurados y modelados. | Estructurados, semiestructurados y no estructurados. |
 | **Enfoque de carga** | ETL (Extract, Transform, Load): Se limpian y estructuran antes de cargar. | ELT (Extract, Load, Transform): Se cargan primero y se transforman después. |
 | **Esquema** | Schema-on-Write (definido al guardar). | Schema-on-Read (definido al consultar). |
@@ -1742,7 +1742,7 @@ arquitectura Lakehouse:
     con rendimiento BI y transacciones ACID).
 
 | **Característica** | **Data Warehouse 🏢** | **Data Lake 🌊** | **Data Lakehouse 🏠** |
-|:---|:---|:---|:---|
+|:-----------------|:-----------------|:-----------------|:-----------------|
 | **Analogía** | Menú de restaurante fino. | Bodega/Mercado gigante. | Buffet con cocina abierta. |
 | **Tipo de datos** | Solo estructurados (tablas). | Todo (estructurados, fotos, JSONs). | Todo (estructurados, fotos, JSONs). |
 | **Costo** | Alto. | Muy bajo. | Bajo (almacenamiento) + Escalable (cómputo). |
@@ -1935,8 +1935,264 @@ visualización en nuestro caso Power BI..**
 #### **Resumen Ejecutivo de la Clase**
 
 | **Etapa / Capa** | **Concepto Enseñado** | **Lo que hicieron en la práctica** |
-|:---|:---|:---|
+|:-----------------------|:-----------------------|:-----------------------|
 | **Data Lake** 🌊 | **Capa Bronce (Raw)** | Guardaron fuentes heterogéneas (CSVs) con fechas mixtas (`2016-01`, `08/01/2016`), textos `'NA'` y espacios, sin alterar la fuente original. |
 | **Data Lakehouse** 🏠 | **Capa Plata (Clean)** | Usaron SQL en BigQuery para limpiar datos: `TRIM()` para espacios, `NULLIF('NA')` para nulos reales, `CASE + PARSE_DATE` para estandarizar fechas y `DATE_TRUNC + GROUP BY` para agrupar por mes. |
 | **Data Warehouse** 🏢 | **Capa Oro (Master)** | Unieron las fuentes mediante un `JOIN` por mes y precalcularon los KPIs estratégicos (Balanza Comercial, Exportaciones Totales y Flujo Neto de Divisas). |
 | **Self-Service BI** 📊 | **Power BI / Looker Studio** | Se conectaron directamente a la Capa Oro en 3 clics, creando gráficos instantáneos sin recargar la PC local ni limpiar nada en Power Query. |
+
+## 4. Unidad 4-Visualización Estratégica
+
+### Principios de Visualización Estratégica
+
+**¿Qué es la visualización de datos?**
+
+La visualización de datos es la representación gráfica de información
+con el propósito de facilitar la identificación de patrones, tendencias,
+diferencias, relaciones y valores atípicos.
+
+![](images/clipboard-3918026172.png)
+
+-   Una visualización efectiva no busca únicamente presentar datos de
+    forma atractiva.
+
+-   Su objetivo principal es facilitar la comprensión y apoyar la toma
+    de decisiones.
+
+Podemos decir que:
+
+**"Una buena visualización reduce el esfuerzo necesario para comprender
+los datos."**
+
+![](images/clipboard-3215311142.png)
+
+-   **Dato:** valor sin contexto.
+
+-   **Información:** dato organizado y contextualizado.
+
+-   **Análisis:** comparación e identificación de patrones.
+
+-   **Conocimiento:** interpretación de los resultados.
+
+-   **Decisión:** acción basada en la evidencia disponible.
+
+**Ejemplo:**
+
+![](images/clipboard-1690003179.png)
+
+### **¿Qué debemos hacer?**
+
+1.  Definir primero la pregunta
+
+    ¿Qué queremos comunicar?
+
+    **Pregunta ↓ Indicador ↓ Comparación necesaria ↓ Visualización**
+
+2.  Elegir el gráfico según el objetivo
+
+    | Pregunta | Visualización recomendada |
+    |------------------------------------|------------------------------------|
+    | ¿Cuál es mayor? | Barras |
+    | ¿Cómo ha cambiado en el tiempo? | Línea |
+    | ¿Cómo se distribuye un total? | Barras apiladas / pastel en casos simples |
+    | ¿Cuál es el valor actual? | Tarjeta |
+    | ¿Cómo se distribuyen los datos? | Histograma |
+    | ¿Existe relación entre dos variables? | Dispersión |
+    | ¿Necesito consultar valores individuales? | Tabla / matriz |
+
+3.  Simplicidad
+
+    Elementos como:
+
+    -   Bordes excesivos
+
+    -   Sombras
+
+    -   Fondos decorativos
+
+    -   Semasiados colores
+
+    -   Iconos innecesarios
+
+    -   Etiquetas redundantes
+
+    -   Gráficos 3D
+
+    Pueden competir con la información.
+
+    -   Una visualización debería contener únicamente elementos que
+        contribuyan a interpretar los datos.
+
+    -   Menos elementos no significa menos información. Significa menos
+        distracciones.
+
+4.  Jerarquía Visual
+
+    No todos los elementos de un dashboard tienen la misma importancia.
+
+    El usuario debería identificar rápidamente:
+
+    1.  Indicadores principales
+
+    2.  Comparaciones relevantes
+
+    3.  Detalles
+
+    4.  filtros
+
+5.  Uso del color
+
+    El color puede utilizarse para:
+
+    -   Destacar información
+
+    -   Diferenciar categorías
+
+    -   Indicar estados
+
+    -   Dirigir la atención.
+
+    Pero no debería utilizarse únicamente como decoración.
+
+    **Ejemplos:**
+
+    **Rojo:** alerta o deterioro.
+
+    **Verde:** cumplimiento o resultado favorable.
+
+    **Gris:** contexto.
+
+6.  Contexto
+
+Un número por sí mismo suele ser poco informativo.
+
+Por ejemplo:
+
+> **684,6**
+
+¿Qué significa?
+
+Podría ser cualquier cosa.
+
+Mejor:
+
+> **684,6 puntos — promedio global ponderado**
+
+Mejor todavía si existe referencia:
+
+> **684,6 puntos — promedio global ponderado de estudiantes evaluados**
+
+### Storytelling con datos
+
+**¿Qué es storytelling con datos?**
+
+No significa contar una historia literaria.
+
+Significa:
+
+**"Organizar evidencia de manera que conduzca al usuario desde una
+pregunta hasta una interpretación."**
+
+### KPIs
+
+**¿Qué es una métrica?**
+
+Una métrica es una medida cuantitativa utilizada para describir alguna
+característica de un fenómeno.
+
+Ejemplo:
+
+-   Número de estudiantes evaluados
+
+**¿Qué es un KPI?**
+
+Un Key Performance Indicator es una métrica seleccionada por su
+relevancia para evaluar el desempeño respecto a un objetivo.
+
+**"Todo KPI es una métrica, pero no toda métrica es un KPI."**
+
+**Métrica**
+
+50.578 registros.
+
+**KPI**
+
+97,2 % de estudiantes evaluados.
+
+Porque este segundo indicador proporciona información directamente
+interpretable sobre cobertura.
+
+### Características de un buen KPI
+
+1.  Relevante: Relacionado con un objetivo.
+
+2.  Comprensible: Fácil de interpretar.
+
+3.  Medible: Construido con datos disponibles.
+
+4.  Comparable: Permitir comparación temporal, territorial o frente a
+    una meta.
+
+5.  Accionable: Aportar información útil para una decisión.
+
+### Dashboards
+
+-   Un dashboard no es una colección de gráficos.
+
+-   Un buen dashboard debe responder preguntas.
+
+**¿Qué es un Dashboard?**
+
+*"Un dashboard es una interfaz visual que integra indicadores y
+visualizaciones relevantes para facilitar el seguimiento, análisis e
+interpretación de información."*
+
+### Tipos de Dashboard
+
+| Tipo de Dashboard | Público Objetivo | Densidad de Indicadores | Enfoque y Monitoreo |
+|------------------|------------------|--------------------|------------------|
+| 🎯 **Estratégico** | Alta dirección | Pocos indicadores | Seguimiento de objetivos macro y visión global del negocio. |
+| ⚙️ **Táctico** | Responsables de áreas | Mayor nivel de detalle | Análisis de rendimiento por departamento y apoyo a planes de acción. |
+| 📋 **Operativo** | Líderes de equipo y personal operativo | Métricas muy específicas | Monitoreo frecuente e información actualizada en tiempo real para la gestión diaria. |
+
+### Niveles de Analítica
+
+Un dashboard de Power BI normalmente se mueve principalmente entre:
+
+**Descriptiva** y **Diagnóstica exploratoria**.
+
+Es importante mencionar que ...
+
+***Dashboard ≠ causalidad***
+
+Vamos a ver estos puntajes: ...
+
+Particular 703
+
+Fiscomisional 691
+
+Municipal 689
+
+Fiscal 680
+
+Si tenemos este cuadro dentro del PI, podriamos decir que existen
+diferencias entre los tipos de sostenimiento.
+
+Pero no permite afirmar automáticamente que: El sostenimiento particular
+causa mejores resultados.
+
+Porque podrían existir variables como:
+
+-   Nivel socioeconómico;
+
+-   Territorio
+
+-   Características del estudiante
+
+-   Composición institucional
+
+-   Selección
+
+-   Recursos disponibles.
+
+### **Vamos al caso práctico**
