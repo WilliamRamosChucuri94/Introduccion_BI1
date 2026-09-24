@@ -53,7 +53,7 @@ import("pandas")$`__version__`
 
 ![](images/clipboard-798819417.png){width="513"}
 
-### ¿Qué es Business Intelligence?
+### 1.1. ¿Qué es Business Intelligence?
 
 "Es el conjunto de metodologías, tecnologías, procesos y herramientas
 que permiten transformar datos en información útil para apoyar a la toma
@@ -74,11 +74,11 @@ de decisiones.
 **Business Intelligence: Son procesos, prácticas y tecnologías que
 transforman datos en información útil para decidir.**
 
-### Evolución de Business Intelligence
+### 1.2. Evolución de Business Intelligence
 
 ![](images/clipboard-1576259561.png){width="539"}
 
-### Rol del dato en las organizaciones
+### 1.3. Rol del dato en las organizaciones
 
 ![](images/clipboard-1419052671.png){width="539"}
 
@@ -92,7 +92,7 @@ transforman datos en información útil para decidir.**
 
 ![](images/clipboard-2184062281.png){width="539"}
 
-### Cultura Data Driven
+### 1.4. Cultura Data Driven
 
 Una organización data-driven toma decisiones fundamentadas en datos y
 evidencia.
@@ -125,13 +125,13 @@ evidencia.
 
 ![](images/clipboard-1208681940.png){width="539"}
 
-### Casos de uso
+### 1.5. Casos de uso
 
 ![](images/clipboard-3068899046.png){width="539"}
 
 ## 2. Unidad 2
 
-### Analítica descriptiva
+### 2.1. Analítica descriptiva
 
 Proceso de usar datos históricos para responde una pregunta clave.
 
@@ -164,7 +164,7 @@ el futuro
 -   **Salud:** Revisar cuántos ingresos hubo en urgencias en los últimos
     tres días
 
-### Analítica diagnóstica
+### 2.2. Analítica diagnóstica
 
 Es un tipo de análisis de datos que responde a una pregunta clave.
 
@@ -197,7 +197,7 @@ Es un tipo de análisis de datos que responde a una pregunta clave.
     falló a una hora específica al correlacionar el pico de tráfico con
     la falta de memoria RAM.
 
-### Analítica Predictiva
+### 2.3. Analítica Predictiva
 
 Rama del análisis de datos que utiliza información histórica,
 estadística y técnicas de aprendizaje automático (machine learning) para
@@ -232,7 +232,7 @@ pasó, para anticiparse y saber qué es más probable que suceda.
 -   **Mantenimiento industrial:** Saber cuándo una máquina o pieza puede
     fallar para repararla antes de que se rompa.
 
-### Analítica Prescriptiva
+### 2.4. Analítica Prescriptiva
 
 Fase más avanzada del análisis de datos. Responde a la pregunta:
 
@@ -278,7 +278,7 @@ El documento tiene dos pistas completas y paralelas: 🐍 **Python** y 📊
 **R**, cada una recorriendo las cuatro etapas sobre el mismo caso, para
 que compares cómo se resuelve el mismo problema en ambos lenguajes.
 
-### El caso: Cartera de créditos
+### 2.5. El caso: Cartera de créditos
 
 La cuenta `14 - CARTERA DE CRÉDITOS` es una serie histórica que refleja
 datos sobre el comportamiento de créditos en el Ecuador.
@@ -1317,7 +1317,7 @@ que usaremos en las cuatro etapas:
 
 ## 3. Unidad 3-Arquitectura de Datos
 
-### Data Warehouse
+### 3.1. Data Warehouse
 
 Un Data Warehouse (DW) es un repositorio central diseñado para integrar,
 organizar y conservar datos históricos de distintas fuentes con fines de
@@ -1542,7 +1542,7 @@ Core → Data Marts):
 | **Estrella / Snowflake** | Presentación / Oro / Data Marts | Intuitivo, optimizado para BI, JOINs sencillos. | Power BI, Tableau, análisis OLAP departmental. |
 | **OBT (One Big Table)** | Presentación / Analítica Avanzada | Sin JOINs, lectura en columnas extremadamente rápida. | Machine Learning, consultas ad-hoc masivas. |
 
-### Data Lake
+### 3.2. Data Lake
 
 Un Data Lake (Lago de Datos) es un repositorio centralizado de
 almacenamiento diseñado para guardar enormes volúmenes de datos en su
@@ -1602,7 +1602,7 @@ control de acceso y sin saber qué datos son válidos o duplicados.
 
 **"La Evolución Moderna: El Data Lakehouse"**
 
-### Data Lakehouse
+### 3.3 Data Lakehouse
 
 Es el paradigma dominante en la arquitectura de datos moderna. Nació
 para resolver la frustración de tener que mantener dos sistemas
@@ -1943,7 +1943,7 @@ visualización en nuestro caso Power BI..**
 
 ## 4. Unidad 4-Visualización Estratégica
 
-### Principios de Visualización Estratégica
+### 4.1. Principios de Visualización Estratégica
 
 **¿Qué es la visualización de datos?**
 
@@ -2082,7 +2082,7 @@ Mejor todavía si existe referencia:
 
 > **684,6 puntos — promedio global ponderado de estudiantes evaluados**
 
-### Storytelling con datos
+### 4.2. Storytelling con datos
 
 **¿Qué es storytelling con datos?**
 
@@ -2093,7 +2093,7 @@ Significa:
 **"Organizar evidencia de manera que conduzca al usuario desde una
 pregunta hasta una interpretación."**
 
-### KPIs
+### 4.3. KPIs
 
 **¿Qué es una métrica?**
 
@@ -2135,7 +2135,7 @@ interpretable sobre cobertura.
 
 5.  Accionable: Aportar información útil para una decisión.
 
-### Dashboards
+### 4.4. Dashboards
 
 -   Un dashboard no es una colección de gráficos.
 
@@ -2196,3 +2196,221 @@ Porque podrían existir variables como:
 -   Recursos disponibles.
 
 ### **Vamos al caso práctico**
+
+## 5. Unidad 5-Requerimientos de Negocio
+
+### 5.1 Design Thinking para proyectos de Business Intelligence
+
+*"Un dashboard no empieza en Power BI. Empieza entendiendo un problema
+del negocio."*
+
+Empieza con:
+
+-   Entender el negocio
+
+-   Definir requerimientos
+
+-   Definir métricas
+
+-   Modelar y Diseñar solución
+
+-   Validar con el usuario
+
+![](images/clipboard-1561239764.png)
+
+#### Estudio de Caso
+
+El Instituto Nacional de Evaluación Educativa (INEVAL) aplica
+evaluaciones estandarizadas para medir el desempeño académico de los
+estudiantes ecuatorianos.
+
+Las autoridades educativas requieren una herramienta analítica que
+permita monitorear los resultados obtenidos por los estudiantes,
+identificar brechas de desempeño y apoyar la toma de decisiones en
+materia de política educativa.
+
+Actualmente existe una gran cantidad de información, pero se requiere
+transformarla en indicadores y visualizaciones que faciliten el análisis
+
+### Fase 1: Empathize
+
+### Identificación de necesidades
+
+### Situación
+
+El Ministerio de Educación desea responder preguntas como:\<
+
+-   ¿Cuál es el puntaje promedio nacional?
+
+-   ¿Qué provincias presentan mejores resultados?
+
+-   ¿Existen diferencias entre zonas geográficas?
+
+-   ¿Qué grupos requieren atención prioritaria?
+
+-   ¿Cómo evolucionan los resultados en el tiempo?
+
+## Stakeholders
+
+| Actor                 | Necesidad                   |
+|-----------------------|-----------------------------|
+| Ministro de Educación | Panorama nacional           |
+| Director Distrital    | Resultados de su territorio |
+| Rector                | Desempeño de su institución |
+| Analista              | Elaboración de reportes     |
+
+### Resultado esperado
+
+Necesidad de negocio:
+
+> Monitorear el desempeño académico de los estudiantes ecuatorianos
+> mediante indicadores que permitan identificar oportunidades de mejora.
+
+## Traducción a requerimientos
+
+## Requirements Engineering
+
+### Necesidad
+
+> Conocer el rendimiento académico de los estudiantes.
+
+### Requerimientos funcionales
+
+RF01
+
+> El sistema debe visualizar el puntaje promedio nacional.
+
+RF02
+
+> El sistema debe mostrar resultados por provincia.
+
+RF03
+
+> El sistema debe permitir filtrar por sexo.
+
+RF04
+
+> El sistema debe permitir filtrar por régimen educativo.
+
+RF05
+
+> El sistema debe mostrar comparaciones entre grupos.
+
+RF06
+
+> El sistema debe visualizar la distribución de puntajes.
+
+### Requerimientos no funcionales
+
+RNF01
+
+> La información debe presentarse mediante dashboard interactivo.
+
+RNF02
+
+> Los resultados deben actualizarse cuando existan nuevas evaluaciones.
+
+RNF03
+
+> Las visualizaciones deben ser de fácil interpretación.
+
+### Scrum
+
+**Historias de usuario**
+
+### Historia 1
+
+> Como autoridad educativa quiero visualizar el puntaje promedio
+> nacional para conocer el nivel general de desempeño estudiantil.
+
+### Historia 2
+
+> Como director distrital quiero comparar los resultados de mi provincia
+> con el promedio nacional para identificar brechas educativas.
+
+### Historia 3
+
+> Como analista de información quiero filtrar resultados por
+> características demográficas para realizar estudios específicos.
+
+### Métricas
+
+KPI Framework + SMART
+
+KPI 1- Puntaje Promedio -Promedio(Puntaje)
+
+KPI 2-Puntaje Máximo
+
+KPI 3- Puntaje Mínimo
+
+KPI 4- Porcentaje de estudiantes con desempeño satisfactorio
+
+KPI 5- Brecha provincial- Puntaje provincia - Puntaje Nacional
+
+KPI 6- Número de estudiantes evaluados
+
+### Modelo Conceptual de Información
+
+Antes de construir un dashboard es necesario identificar las principales
+entidades del negocio y comprender cómo se relacionan entre sí.
+
+En el caso de INEVAL, la información requerida para analizar el
+desempeño estudiantil puede organizarse mediante los siguientes
+elementos:
+
+PROVINCIA
+
+│
+
+INSTITUCIÓN EDUCATIVA
+
+│
+
+ESTUDIANTE
+
+│
+
+EVALUACIÓN
+
+│
+
+RESULTADO
+
+Donde:
+
+-   Provincia: ubicación geográfica del estudiante.
+
+-   Institución educativa: establecimiento donde estudia.
+
+-   Estudiante: persona evaluada.
+
+-   Evaluación: prueba aplicada por INEVAL.
+
+-   Resultado: puntaje obtenido por el estudiante.
+
+Este modelo permite identificar qué información será necesaria para
+construir indicadores y visualizaciones posteriores.
+
+| Entidad     | Variables principales |
+|-------------|-----------------------|
+| Provincia   | Provincia             |
+| Institución | Nombre Institución    |
+| Estudiante  | ID Estudiante, Sexo   |
+| Resultado   | Puntaje               |
+| Evaluación  | Período               |
+
+**Cursos Adicionales**
+
+-   [**Reporting y Machine
+    Learning**](https://williamramoschucuri94.github.io/Curso_ML_Final/)
+
+-   [**Series
+    Temporales**](https://williamramoschucuri94.github.io/Series-de-Tiempo/)
+
+-   [**Modelos
+    Estructurales**](https://williamramoschucuri94.github.io/Modelos-Estructurales/)
+
+Linkedin
+
+[William
+Ramos-Chucuri](www.linkedin.com/in/william-ramos-chucuri-80131885)
